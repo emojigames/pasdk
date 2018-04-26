@@ -1,7 +1,0 @@
-c:\users\neel\documents\visual studio 2010\Projects\PASdkLib\PASdkLib\bin\Debug\PASdkLib.dll
-c:\users\neel\documents\visual studio 2010\Projects\PASdkLib\PASdkLib\bin\Debug\PASdkLib.pdb
-c:\users\neel\documents\visual studio 2010\Projects\PASdkLib\PASdkLib\obj\Debug\PASdkLib.dll
-c:\users\neel\documents\visual studio 2010\Projects\PASdkLib\PASdkLib\obj\Debug\PASdkLib.pdb
-c:\users\neel\documents\visual studio 2010\Projects\PASdkLib\PASdkLib\obj\Debug\PASdkLib.csprojResolveAssemblyReference.cache
-c:\users\neel\documents\visual studio 2010\Projects\PASdkLib\PASdkLib\bin\Debug\UnityEngine.dll
-c:\users\neel\documents\visual studio 2010\Projects\PASdkLib\PASdkLib\bin\Debug\LitJson.dll
