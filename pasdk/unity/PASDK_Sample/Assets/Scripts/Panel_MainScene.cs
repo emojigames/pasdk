@@ -11,7 +11,15 @@ public class Panel_MainScene : MonoBehaviour {
     public GameObject SignUpPanelObj;
     [Header("MainScenePanel")]
     public GameObject MainScenePanelObj;
-    public Text gameIDObj; 
+    public Text gameIDObj;
+    [Header("SetMyInfoPanel")]
+    public GameObject SetMyInfoPanelObj;
+    public InputField NameObj;
+    public InputField CurrentPasswordObj;
+    public InputField NewPasswordObj;
+    public InputField NewPasswordConfirmObj;
+    
+    
 	// Use this for initialization
 	void Start () {
         gameIDObj.text = "gameId : " + Cmn_Var.GameID;
@@ -57,35 +65,7 @@ public class Panel_MainScene : MonoBehaviour {
        
     }
 
-    public void ButtonClick_resetPassword()
-    {
-       
-        if (IsInitCheck())
-        {
-            PASdkLib.PASDK.resetPassword(this, "mbiz.neel@gmail.com",
-           (JsonData result) =>    //success 
-           {
-               /*
-              * result :ex) {"message":"email is sent"}
-              * 
-              * string : result["message"]
-              */
-               Debug.Log("Panel_MainScene : SignOut Success Result " + result.ToJson());
-           },
-           (JsonData result) =>    //fail
-           {
-               /*
-                * result :ex) {"returncode":"-1","message":"error"}
-                * 
-                * string : result["returncode"]
-                * string : result["message"]
-                */
-               Debug.Log("Panel_MainScene : SignOut Fail Result " + result.ToJson());
-           });
-        }
-        else { Cmn_function.MessageWrongApproach(); }
-       
-    }
+   
     public void ButtonClick_gameStart()
     {
         if (IsInitCheck())
@@ -119,6 +99,7 @@ public class Panel_MainScene : MonoBehaviour {
     }
     public void ButtonClick_setUserPlay()
     {
+        
         if (IsInitCheck())
         {
             /// <param name="gametype">0 : SINGLE PLAY | 1 : MULTI PLAY</param>
@@ -255,16 +236,11 @@ public class Panel_MainScene : MonoBehaviour {
            (JsonData result) =>    //success 
            {
                /*
-               * result :ex)  {"USER_NO":58,"STATUS":1,"STATUS_PACOIN":"enabled","EMAIL":"mbiz.neel@gmail.com","NAME":"","COUNTRY":"","BIRTH_DATE":"","GENDER":"none"}
+               * result :ex)  {"USER_NO":58,"STATUS":1,"STATUS_PACOIN":"enabled","EMAIL":"pasdk@email.com","NAME":"","COUNTRY":""}
                * 
-               * string : result["USER_NO"]
-               * string : result["STATUS"]
-               * string : result["STATUS_PACOIN"]
                * string : result["EMAIL"]
                * string : result["NAME"]
                * string : result["COUNTRY"]
-               * string : result["BIRTH_DATE"]
-               * string : result["GENDER"]
                 *              ....
                */
                Debug.Log("Panel_MainScene : getMyInfo Success Result " + result.ToJson());
@@ -283,35 +259,61 @@ public class Panel_MainScene : MonoBehaviour {
         else { Cmn_function.MessageWrongApproach(); }
         
     }
+    public void ButtonClick_GoSetMyInfoPage()
+    {
+        NameObj.text = "";
+        CurrentPasswordObj.text = "";
+        NewPasswordObj.text = "";
+        NewPasswordConfirmObj.text = "";
+
+        SetMyInfoPanelObj.SetActive(true);
+    }
     public void ButtonClick_setMyInfo()
     {
         if (IsInitCheck())
         {
-            String name = "neel111";
-            String birthday = "2000-09-09"; //YYYY-MM-DD
-            String gender = "none";
-            String password = "hky1945!";
+            /////////////////////////////////////
+            //수정할 부분만 보낸다. 수정하지 않을 부분은 빈 값으로 보낸다.
+            //패스워드는 현재 패스워드와 수정할 패스워드를 같이 보내야 한다.
+            /////////////////////////////////////
+            String name = NameObj.text;
 
-            PASdkLib.PASDK.setMyInfo(this, name, birthday, gender, password,
-              (JsonData result) =>    //success 
-              {
-                  /*
-                  * result :ex) {"message":"edited successfully"}
-                  * 
-                  * string : result["message"]
-                  */
-                  Debug.Log("Panel_MainScene : setMyInfo Success Result " + result.ToJson());
-              },
-              (JsonData result) =>    //fail
-              {
-                  /*
-                   * result :ex) {"returncode":"-1","message":"error"}
-                   * 
-                   * string : result["returncode"]
-                   * string : result["message"]
-                   */
-                  Debug.Log("Panel_MainScene : setMyInfo Fail Result " + result.ToJson());
-              });
+            String current_password = CurrentPasswordObj.text;
+
+            String new_password = NewPasswordObj.text;
+            String new_password_confirm = NewPasswordConfirmObj.text;
+
+            if (Cmn_function.ConfirmPasswordCheck(new_password, new_password_confirm))
+            {
+                PASdkLib.PASDK.setMyInfo(this, name, current_password, new_password,
+                  (JsonData result) =>    //success 
+                  {
+                      /*
+                      * result :ex) {"message":"edited successfully"}
+                      * 
+                      * string : result["message"]
+                      */
+                      Debug.Log("Panel_MainScene : setMyInfo Success Result " + result.ToJson());
+                  },
+                  (JsonData result) =>    //fail
+                  {
+                      /*
+                       * result :ex) {"returncode":"-1","message":"error"}
+                       * 
+                       * string : result["returncode"]
+                       * string : result["message"]
+                       */
+                      Debug.Log("Panel_MainScene : setMyInfo Fail Result " + result.ToJson());
+                  });
+            }
+            else
+            {
+                Cmn_function.MessageBoxOK("Error", "The new password is different.", "OK",
+                () =>
+                {   //OK Button Click
+
+                });
+            }
         }
         else { Cmn_function.MessageWrongApproach(); }
         
@@ -329,6 +331,7 @@ public class Panel_MainScene : MonoBehaviour {
               * string : result["message"]
               */
               Debug.Log("Panel_MainScene : resendEmail Success Result " + result.ToJson());
+              Cmn_function.MessageBoxOK("ReSend Email", result["message"].ToString(), "OK", () => { });
           },
           (JsonData result) =>    //fail
           {

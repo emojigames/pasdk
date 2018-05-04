@@ -7,18 +7,22 @@ public class Button_Back : MonoBehaviour {
     public GameObject SignInPanelObj;
     [Header("SignUpPanel")]
     public GameObject SignUpPanelObj;
-	// Use this for initialization
+    [Header("SetMyInfoPanel")]
+    public GameObject SetMyInfoPanelObj;
+    // Use this for initialization
 	void Start () {
 	
 	}
-    public void OnMouseDown()
+   
+    public void Back_SignUp()
     {
-        BackButtonClick();
-    }
-    void BackButtonClick()
-    {
-        Debug.Log("BackButtonClick!!");
+        //Debug.Log("BackButtonClick!!");
         SignInPanelObj.SetActive(true);
         SignUpPanelObj.SetActive(false);
+        SetMyInfoPanelObj.SetActive(false);
+    }
+    public void Back_SetMyInfo()
+    {
+        SetMyInfoPanelObj.SetActive(false);
     }
 }

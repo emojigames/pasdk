@@ -16,23 +16,27 @@ public class Button_CreateAccount : MonoBehaviour {
 	}
     public void OnMouseDown()
     {
-        Debug.Log("Button_CreateAccount OnClick!!");
         SignUp(NewEmailField.text, NewPassField.text);
     }
     void SignUp(string new_email, string new_pass)
     {
         
-        if (ConfirmPasswordCheck(NewPassField.text, ConfirmPassField.text))
+        if (Cmn_function.ConfirmPasswordCheck(NewPassField.text, ConfirmPassField.text))
         {
             PASdkLib.PASDK.SignUp(this, new_email, new_pass,
               (JsonData result) =>    //success 
               {
                   /*
-               * result :ex) {"message":"success"}
-               * 
-               * string : result["message"]
-               */
-                  Debug.Log("CUBE : SignUp Success Result " + result.ToString());
+                 * result :ex) {"EMAIL":"pasdk@email.com","NAME":"","COUNTRY":"","POC":"50"}
+                 * 
+                 * string : result["EMAIL"]
+                 * string : result["NAME"]
+                 * string : result["COUNTRY"]
+                 * string : result["POC"]
+                 * 
+                 */
+                  Debug.Log("Button_CreateAccount : SignUp Success Result " + result.ToJson());
+                  Cmn_function.EmailAgreementCheck(result["POC"].ToString());
               },
               (JsonData result) =>    //fail
               {
@@ -42,7 +46,7 @@ public class Button_CreateAccount : MonoBehaviour {
                  * string : result["returncode"]
                  * string : result["message"]
                  */
-                  Debug.Log("CUBE : SignUp Fail Result " + result.ToString());
+                  Debug.Log("Button_CreateAccount : SignUp Fail Result " + result.ToJson());
               });
         }
         else
@@ -56,11 +60,5 @@ public class Button_CreateAccount : MonoBehaviour {
         }
         
     }
-    bool ConfirmPasswordCheck(string p1, string p2)
-    {
-        if (p1.CompareTo(p2) == 0)
-            return true;
-        else 
-            return false;
-    }
+    
 }

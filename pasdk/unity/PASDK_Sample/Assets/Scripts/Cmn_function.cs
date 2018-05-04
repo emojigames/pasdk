@@ -21,5 +21,15 @@ public class Cmn_function {
         if (EditorUtility.DisplayDialog(title, message, btnYesName))
             callbackYes();
     }
-
+    public static void EmailAgreementCheck(string poc)
+    {
+        if (poc.Equals("")) MessageBoxOK("Please Check Email", "need agreement for PAcoin", "OK", () => { });
+    }
+    public static bool ConfirmPasswordCheck(string p1, string p2)
+    {
+        if (p1.CompareTo(p2) == 0)
+            return true;
+        else
+            return false;
+    }
 }

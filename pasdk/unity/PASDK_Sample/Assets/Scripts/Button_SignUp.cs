@@ -17,7 +17,7 @@ public class Button_SignUp : MonoBehaviour {
     public void OnMouseDown()
     {
         OpenCreateAccount();
-        Debug.Log("*********CreateAccountButton.cs OnMouseDown");
+        
     }
     public void OpenCreateAccount()
     {
@@ -25,11 +25,7 @@ public class Button_SignUp : MonoBehaviour {
         SignInPanelObj.SetActive(false);
         SignUpPanelObj.SetActive(true);
         
-        
-        /*if (EditorUtility.DisplayDialog("Title!!", "Message TExt", "Yes", "No"))
-            print("Pressed Yes.");
-        else
-            print("Pressed No.");*/
+     
     }
     
    

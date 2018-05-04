@@ -48,20 +48,22 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Button_Back.cs" />
      <Compile Include="Assets\Scripts\Button_CreateAccount.cs" />
+     <Compile Include="Assets\Scripts\Button_ForgotPassword.cs" />
      <Compile Include="Assets\Scripts\Button_SignIn.cs" />
      <Compile Include="Assets\Scripts\Button_SignUp.cs" />
      <Compile Include="Assets\Scripts\Cmn_Var.cs" />
      <Compile Include="Assets\Scripts\Cmn_function.cs" />
      <Compile Include="Assets\Scripts\MainCamera.cs" />
+     <Compile Include="Assets\Scripts\Panel_ForgotPassword.cs" />
      <Compile Include="Assets\Scripts\Panel_MainScene.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
- <Reference Include="PASdkLib">
- <HintPath>C:/Users/neel/Documents/Unity3D_projects/PASDK_Sample/Assets/Plugins/PASdkLib.dll</HintPath>
- </Reference>
  <Reference Include="LitJson">
  <HintPath>C:/Users/neel/Documents/Unity3D_projects/PASDK_Sample/Assets/Plugins/LitJson.dll</HintPath>
+ </Reference>
+ <Reference Include="PASdkLib">
+ <HintPath>C:/Users/neel/Documents/Unity3D_projects/PASDK_Sample/Assets/Plugins/PASdkLib.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

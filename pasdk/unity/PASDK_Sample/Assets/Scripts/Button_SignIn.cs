@@ -13,7 +13,7 @@ public class Button_SignIn : MonoBehaviour {
     public GameObject SignUpPanelObj;
     [Header("MainScenePanel")]
     public GameObject MainScenePanelObj;
-
+    
     // Use this for initialization
 	void Start () {
 	
@@ -21,7 +21,7 @@ public class Button_SignIn : MonoBehaviour {
     public void OnMouseDown()
     {
         SignIn(emailField.text, passField.text);
-        Debug.Log("*********Button_SignIn.cs OnMouseDown");
+      
     }
     void SignIn(string email, string pass)
     {
@@ -30,12 +30,17 @@ public class Button_SignIn : MonoBehaviour {
             (JsonData result) =>    //success 
             {
                 /*
-                * result :ex) {"message":"success"}
-                * 
-                * string : result["message"]
-                */
+                 * result :ex) {"EMAIL":"pasdk@email.com","NAME":"","COUNTRY":"","POC":"50"}
+                 * 
+                 * string : result["EMAIL"]
+                 * string : result["NAME"]
+                 * string : result["COUNTRY"]
+                 * string : result["POC"]
+                 * 
+                 */
                 Debug.Log("CUBE : SignIn Success Result " + result.ToJson());
                 GoMainScenePanel();
+                Cmn_function.EmailAgreementCheck(result["POC"].ToString());
             },
             (JsonData result) =>    //fail
             {
