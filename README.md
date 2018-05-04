@@ -3,11 +3,12 @@ pasdk library files
 
     PASDK_Sample : 
 
-          unity sample project
+          ** unity sample project
 
     PASdkLib :
+          ** dll files
 
-          PASdkLib.dll
+            PASdkLib.dll
   
               using LitJson.dll
   
