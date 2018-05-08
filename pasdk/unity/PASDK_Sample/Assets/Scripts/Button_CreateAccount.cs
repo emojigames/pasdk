@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using LitJson;
-using UnityEditor;
+
 
 public class Button_CreateAccount : MonoBehaviour {
 
@@ -10,6 +10,7 @@ public class Button_CreateAccount : MonoBehaviour {
     public InputField NewEmailField;
     public InputField NewPassField;
     public InputField ConfirmPassField;
+    
     // Use this for initialization
 	void Start () {
 	
@@ -51,12 +52,7 @@ public class Button_CreateAccount : MonoBehaviour {
         }
         else
         {
-            Cmn_function.MessageBoxOK("Error","The password is different.", "OK", 
-                () =>
-                {   //OK Button Click
-
-                });
-            
+            Cmn_function.MessageBoxOK("Error","The password is different.");
         }
         
     }

@@ -8,6 +8,9 @@ public class Panel_ForgotPassword : MonoBehaviour {
     [Header("ForgotPasswordPanel")]
     public GameObject ForgotPasswordPanelObj;
     public InputField EmailObj;
+    [Header("MessageBoxPanel")]
+    public Text MessageTextTitle;
+    public Text MessageTextMessage;
   
 	// Use this for initialization
 	void Start () {
@@ -31,7 +34,7 @@ public class Panel_ForgotPassword : MonoBehaviour {
               * string : result["message"]
               */
                Debug.Log("Panel_ForgotPassword : SignOut Success Result " + result.ToJson());
-               Cmn_function.MessageBoxOK("Reset Password", result["message"].ToString(), "OK", () => { });
+               Cmn_function.MessageBoxOK("Reset Password", result["message"].ToString());
            },
            (JsonData result) =>    //fail
            {

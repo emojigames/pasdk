@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using LitJson;
-using UnityEditor;
+
 public class Button_SignUp : MonoBehaviour {
     [Header("SignInPanel")]
     public GameObject SignInPanelObj;

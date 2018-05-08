@@ -2,6 +2,8 @@
 using System.Collections;
 using UnityEngine.UI;
 using LitJson;
+using System;
+using UnityEngine.Events;
 
 public class MainCamera : MonoBehaviour {
 
@@ -11,9 +13,10 @@ public class MainCamera : MonoBehaviour {
     public GameObject SignUpPanelObj;
     [Header("MainScenePanel")]
     public GameObject MainScenePanelObj;
-
-    // Use this for initialization
+   
+      // Use this for initialization
 	void Start () {
+
         JsonData initData = new JsonData();
 
         //initData["gameId"] = Cmn_Var.GAME_ID_REAL;
@@ -37,7 +40,10 @@ public class MainCamera : MonoBehaviour {
 
                 Debug.Log("MainCamera : Init Success Result " + result.ToJson());
                 GoMainScenePanel();
-                Cmn_function.EmailAgreementCheck(result["POC"].ToString());
+               // displayManager.DisplayMessage("success testmessa");
+                //msgPanel.ShowMessageBoxOK("testTitle", "testMessage", YesAction);
+               
+                Cmn_function.EmailAgreementCheck(result["POC"].ToString());            
             },
             (JsonData result) =>    //fail
             {
@@ -47,6 +53,7 @@ public class MainCamera : MonoBehaviour {
                  * string : result["returncode"]
                  * string : result["message"]
                  */
+                
                 Debug.Log("MainCamera : Init Fail Result " + result.ToJson());
                 GoSignInPanel();
             });

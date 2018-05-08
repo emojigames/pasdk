@@ -18,6 +18,7 @@ public class Panel_MainScene : MonoBehaviour {
     public InputField CurrentPasswordObj;
     public InputField NewPasswordObj;
     public InputField NewPasswordConfirmObj;
+     
     
     
 	// Use this for initialization
@@ -81,6 +82,7 @@ public class Panel_MainScene : MonoBehaviour {
 
                  Debug.Log("Panel_MainScene : gameStart Success Result " + result.ToJson());
                  //setUserPlay();
+                 Cmn_function.MessageBoxOK("Success", result.ToJson());
 
              },
             (JsonData result) =>    //fail
@@ -92,6 +94,7 @@ public class Panel_MainScene : MonoBehaviour {
                  * string : result["message"]
                  */
                 Debug.Log("Panel_MainScene : gameStart Fail Result " + result.ToJson());
+                Cmn_function.MessageBoxOK("Error", result.ToJson());
             });
         }
         else { Cmn_function.MessageWrongApproach(); }
@@ -116,6 +119,7 @@ public class Panel_MainScene : MonoBehaviour {
                      * string : result["rewardpoc"]
                      */
                      Debug.Log("Panel_MainScene : setUserPlay Success Result " + result.ToJson());
+                     Cmn_function.MessageBoxOK("Success", result.ToJson());
                  },
                 (JsonData result) =>    //fail
                 {
@@ -126,6 +130,7 @@ public class Panel_MainScene : MonoBehaviour {
                      * string : result["message"]
                      */
                     Debug.Log("Panel_MainScene : setUserPlay Fail Result " + result.ToJson());
+                    Cmn_function.MessageBoxOK("Error", result.ToJson());
                 });
         }
         else { Cmn_function.MessageWrongApproach(); }
@@ -148,6 +153,7 @@ public class Panel_MainScene : MonoBehaviour {
                  *              ....
                 */
                 Debug.Log("Panel_MainScene : getShopInfo Success Result " + result.ToJson());
+                Cmn_function.MessageBoxOK("Success", result.ToJson());
             },
             (JsonData result) =>    //fail
             {
@@ -158,6 +164,7 @@ public class Panel_MainScene : MonoBehaviour {
                  * string : result["message"]
                  */
                 Debug.Log("Panel_MainScene : getShopInfo Fail Result " + result.ToJson());
+                Cmn_function.MessageBoxOK("Error", result.ToJson());
             });
         }
         else { Cmn_function.MessageWrongApproach(); }
@@ -178,6 +185,7 @@ public class Panel_MainScene : MonoBehaviour {
                    * string : result["message"]
                    */
                     Debug.Log("Panel_MainScene : pocPurchase Success Result " + result.ToJson());
+                    Cmn_function.MessageBoxOK("Success", result.ToJson());
                 },
                 (JsonData result) =>    //fail
                 {
@@ -188,6 +196,7 @@ public class Panel_MainScene : MonoBehaviour {
                      * string : result["message"]
                      */
                     Debug.Log("Panel_MainScene : pocPurchase Fail Result " + result.ToJson());
+                    Cmn_function.MessageBoxOK("Error", result.ToJson());
                 });
         }
         else { Cmn_function.MessageWrongApproach(); }
@@ -213,6 +222,7 @@ public class Panel_MainScene : MonoBehaviour {
                      *              ....
                     */
                     Debug.Log("Panel_MainScene : getMessage Success Result " + result.ToJson());
+                    Cmn_function.MessageBoxOK("Success", result.ToJson());
                 },
                 (JsonData result) =>    //fail
                 {
@@ -223,6 +233,7 @@ public class Panel_MainScene : MonoBehaviour {
                      * string : result["message"]
                      */
                     Debug.Log("Panel_MainScene : getMessage Fail Result " + result.ToJson());
+                    Cmn_function.MessageBoxOK("Error", result.ToJson());
                 });
         }
         else { Cmn_function.MessageWrongApproach(); }
@@ -244,6 +255,7 @@ public class Panel_MainScene : MonoBehaviour {
                 *              ....
                */
                Debug.Log("Panel_MainScene : getMyInfo Success Result " + result.ToJson());
+               Cmn_function.MessageBoxOK("Success", result.ToJson());
            },
            (JsonData result) =>    //fail
            {
@@ -254,6 +266,7 @@ public class Panel_MainScene : MonoBehaviour {
                 * string : result["message"]
                 */
                Debug.Log("Panel_MainScene : getMyInfo Fail Result " + result.ToJson());
+               Cmn_function.MessageBoxOK("Error", result.ToJson());
            });
         }
         else { Cmn_function.MessageWrongApproach(); }
@@ -294,6 +307,7 @@ public class Panel_MainScene : MonoBehaviour {
                       * string : result["message"]
                       */
                       Debug.Log("Panel_MainScene : setMyInfo Success Result " + result.ToJson());
+                      Cmn_function.MessageBoxOK("Success", result.ToJson());
                   },
                   (JsonData result) =>    //fail
                   {
@@ -304,15 +318,12 @@ public class Panel_MainScene : MonoBehaviour {
                        * string : result["message"]
                        */
                       Debug.Log("Panel_MainScene : setMyInfo Fail Result " + result.ToJson());
+                      Cmn_function.MessageBoxOK("Error", result.ToJson());
                   });
             }
             else
             {
-                Cmn_function.MessageBoxOK("Error", "The new password is different.", "OK",
-                () =>
-                {   //OK Button Click
-
-                });
+                Cmn_function.MessageBoxOK("Error", "The new password is different.");
             }
         }
         else { Cmn_function.MessageWrongApproach(); }
@@ -331,7 +342,7 @@ public class Panel_MainScene : MonoBehaviour {
               * string : result["message"]
               */
               Debug.Log("Panel_MainScene : resendEmail Success Result " + result.ToJson());
-              Cmn_function.MessageBoxOK("ReSend Email", result["message"].ToString(), "OK", () => { });
+              Cmn_function.MessageBoxOK("ReSend Email", result["message"].ToString());
           },
           (JsonData result) =>    //fail
           {
@@ -342,9 +353,15 @@ public class Panel_MainScene : MonoBehaviour {
                * string : result["message"]
                */
               Debug.Log("Panel_MainScene : resendEmail Fail Result " + result.ToJson());
+              Cmn_function.MessageBoxOK("Error", result.ToJson());
           });
         }
         else { Cmn_function.MessageWrongApproach(); }
         
+    }
+    public void ButtonClick_GetMyPOC()
+    {
+        long mypoc = PASdkLib.PASDK.getMyPoc();
+        Cmn_function.MessageBoxOK("Get My POC", ""+mypoc);
     }
 }
