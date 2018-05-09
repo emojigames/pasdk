@@ -51,6 +51,7 @@ public class Button_SignIn : MonoBehaviour {
                  * string : result["message"]
                  */
                 Debug.Log("CUBE : SignIn Fail Result " + result.ToJson());
+                Cmn_function.MessageBoxOK("Error", result.ToJson());
             });
 
     }

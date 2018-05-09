@@ -18,7 +18,8 @@ public class Panel_MainScene : MonoBehaviour {
     public InputField CurrentPasswordObj;
     public InputField NewPasswordObj;
     public InputField NewPasswordConfirmObj;
-     
+    public Button BtnGameStartObj;
+    public Button BtnSetUserPlayObj;
     
     
 	// Use this for initialization
@@ -79,11 +80,13 @@ public class Panel_MainScene : MonoBehaviour {
                * 
                * string : result["message"]
                */
+                 BtnGameStartObj.gameObject.SetActive(false);
+                 BtnSetUserPlayObj.gameObject.SetActive(true);
 
                  Debug.Log("Panel_MainScene : gameStart Success Result " + result.ToJson());
                  //setUserPlay();
                  Cmn_function.MessageBoxOK("Success", result.ToJson());
-
+                 
              },
             (JsonData result) =>    //fail
             {
@@ -120,6 +123,10 @@ public class Panel_MainScene : MonoBehaviour {
                      */
                      Debug.Log("Panel_MainScene : setUserPlay Success Result " + result.ToJson());
                      Cmn_function.MessageBoxOK("Success", result.ToJson());
+
+                     BtnGameStartObj.gameObject.SetActive(true);
+                     BtnSetUserPlayObj.gameObject.SetActive(false);
+
                  },
                 (JsonData result) =>    //fail
                 {
@@ -131,6 +138,10 @@ public class Panel_MainScene : MonoBehaviour {
                      */
                     Debug.Log("Panel_MainScene : setUserPlay Fail Result " + result.ToJson());
                     Cmn_function.MessageBoxOK("Error", result.ToJson());
+
+                    BtnGameStartObj.gameObject.SetActive(true);
+                    BtnSetUserPlayObj.gameObject.SetActive(false);
+
                 });
         }
         else { Cmn_function.MessageWrongApproach(); }

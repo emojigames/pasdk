@@ -48,6 +48,7 @@ public class Button_CreateAccount : MonoBehaviour {
                  * string : result["message"]
                  */
                   Debug.Log("Button_CreateAccount : SignUp Fail Result " + result.ToJson());
+                  Cmn_function.MessageBoxOK("Error", result.ToJson());
               });
         }
         else
