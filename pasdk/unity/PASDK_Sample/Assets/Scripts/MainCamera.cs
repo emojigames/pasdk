@@ -21,7 +21,6 @@ public class MainCamera : MonoBehaviour {
 
         //initData["gameId"] = Cmn_Var.GAME_ID_REAL;
         initData["gameId"] = Cmn_Var.GameID;
-        initData["gameServer"] = Cmn_Var.GameServer;
 
         
         //Debug.Log("Start!!!");

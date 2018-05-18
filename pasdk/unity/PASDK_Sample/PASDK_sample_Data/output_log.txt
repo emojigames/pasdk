@@ -1,0 +1,117 @@
+Initialize engine version: 5.6.5f1 (2cac56bf7bb6)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: AMD Radeon R7 200 Series (ID=0x683d)
+    Vendor:   ATI
+    VRAM:     1001 MB
+    Driver:   23.20.15017.3010
+Begin MonoManager ReloadAssembly
+Platform assembly: I:\5_bitbucket\PASDK_About\pasdk\unity\PASDK_Sample\PASDK_sample_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading I:\5_bitbucket\PASDK_About\pasdk\unity\PASDK_Sample\PASDK_sample_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: I:\5_bitbucket\PASDK_About\pasdk\unity\PASDK_Sample\PASDK_sample_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading I:\5_bitbucket\PASDK_About\pasdk\unity\PASDK_Sample\PASDK_sample_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: I:\5_bitbucket\PASDK_About\pasdk\unity\PASDK_Sample\PASDK_sample_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading I:\5_bitbucket\PASDK_About\pasdk\unity\PASDK_Sample\PASDK_sample_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: I:\5_bitbucket\PASDK_About\pasdk\unity\PASDK_Sample\PASDK_sample_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading I:\5_bitbucket\PASDK_About\pasdk\unity\PASDK_Sample\PASDK_sample_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: I:\5_bitbucket\PASDK_About\pasdk\unity\PASDK_Sample\PASDK_sample_Data\Managed\LitJson.dll (this message is harmless)
+Loading I:\5_bitbucket\PASDK_About\pasdk\unity\PASDK_Sample\PASDK_sample_Data\Managed\LitJson.dll into Unity Child Domain
+Platform assembly: I:\5_bitbucket\PASDK_About\pasdk\unity\PASDK_Sample\PASDK_sample_Data\Managed\PASdkLib.dll (this message is harmless)
+Loading I:\5_bitbucket\PASDK_About\pasdk\unity\PASDK_Sample\PASDK_sample_Data\Managed\PASdkLib.dll into Unity Child Domain
+- Completed reload, in  0.017 seconds
+Platform assembly: I:\5_bitbucket\PASDK_About\pasdk\unity\PASDK_Sample\PASDK_sample_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: I:\5_bitbucket\PASDK_About\pasdk\unity\PASDK_Sample\PASDK_sample_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 59Hz; virtual: 3840x1080 at 0,0
+<RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 2.842908 ms
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 1fe8 -> priority: 1 
+  Thread -> id: 1c30 -> priority: 1 
+initialize result is JsonData object
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+MainCamera : Init Fail Result {"returncode":"401","message":"Do not have session information."}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+MainCamera : Init Fail Result {"returncode":"401","message":"Do not have session information."}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
++++++++++++++++++pocView Fail {"returncode":"401","message":"Do not have session information."}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CUBE : SignIn Fail Result {"returncode":"431","message":"wrong password"}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CUBE : SignIn Fail Result {"returncode":"431","message":"wrong password"}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CUBE : SignIn Fail Result {"returncode":"431","message":"wrong password"}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+initialize result is JsonData object
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CUBE : SignIn Success Result {"EMAIL":"pasdk@email.com","NAME":"name_pasdk4","COUNTRY":"","POC":""}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
++++++++++++++++++pocView Fail {"returncode":"402","message":"need agreement for PAcoin"}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Panel_MainScene : SignOut Success Result {"message":"success"}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CUBE : SignIn Fail Result {"returncode":"411","message":"unknown email"}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CUBE : SignIn Fail Result {"returncode":"411","message":"unknown email"}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CUBE : SignIn Fail Result {"returncode":"411","message":"unknown email"}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+initialize result is JsonData object
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CUBE : SignIn Success Result {"EMAIL":"mbiz.neel@gmail.com","NAME":"neel111","COUNTRY":"","POC":"0"}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Panel_MainScene : gameStart Success Result {"message":"success"}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Panel_MainScene : getShopInfo Success Result {"message":"success","coinamount":0,"gameshop":[{"shopno":"28","title":"item 1","itemimage":"https://ipas.pocketarena.com/pa/ruby01.png","itemamount":"1000","pocamount":"10"},{"shopno":"29","title":"item 2","itemimage":"https://ipas.pocketarena.com/pa/ruby02.png","itemamount":"5500","pocamount":"50"},{"shopno":"30","title":"item 3","itemimage":"https://ipas.pocketarena.com/pa/ruby03.png","itemamount":"12000","pocamount":"100"},{"shopno":"31","title":"item 4","itemimage":"https://ipas.pocketarena.com/pa/ruby04.png","itemamount":"70000","pocamount":"500"}]}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Panel_MainScene : getMyInfo Success Result {"EMAIL":"mbiz.neel@gmail.com","NAME":"neel111","COUNTRY":""}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Panel_MainScene : getShopInfo Success Result {"message":"success","coinamount":0,"gameshop":[{"shopno":"28","title":"item 1","itemimage":"https://ipas.pocketarena.com/pa/ruby01.png","itemamount":"1000","pocamount":"10"},{"shopno":"29","title":"item 2","itemimage":"https://ipas.pocketarena.com/pa/ruby02.png","itemamount":"5500","pocamount":"50"},{"shopno":"30","title":"item 3","itemimage":"https://ipas.pocketarena.com/pa/ruby03.png","itemamount":"12000","pocamount":"100"},{"shopno":"31","title":"item 4","itemimage":"https://ipas.pocketarena.com/pa/ruby04.png","itemamount":"70000","pocamount":"500"}]}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Panel_MainScene : pocPurchase Fail Result {"returncode":"431","message":"lack of POC"}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
